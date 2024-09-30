@@ -1,0 +1,4 @@
+<div class="indicator-container" [class.disabled]="!done"  [class.done]="done" [class.active]="active">
+  <div class="indicator-bg" [class.done]="done" [class.active]="active"></div>
+  <div class="indicator-center" [class.done]="done" [class.disabled]="!active || !done" [class.active]="active"></div>
+</div>

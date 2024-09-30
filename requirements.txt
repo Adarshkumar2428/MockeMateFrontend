@@ -1,0 +1,10 @@
+openai-whisper
+numpy
+opencv-python
+librosa==0.10.2.post1
+mediapipe==0.10.14
+happytransformer==3.0.0
+tensorflow==2.16.1
+google-generativeai
+python-dotenv
+SpeechRecognition==3.10.4

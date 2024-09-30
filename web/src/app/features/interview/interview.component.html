@@ -1,0 +1,101 @@
+<ng-container *ngIf="interviewQuesData.length != 0 else loading">
+  <div class="container" *ngIf="(interviewQues | async) as response">
+    <app-interview-recorder (objDetectionResult)="handleObjectDetectionResult($event)" (videoRecorded)="handleVideoRecorded($event)" #recorder>
+      <app-prep-timer #prepTimer [showPrepMsg]="!response[activeQuestionIdx].videoBlob"
+        (prepComplete)="handlePrepComplete()" (prepStarted)="handlePrepStarted()">
+      </app-prep-timer>
+    </app-interview-recorder>
+
+    <div class="fr">
+
+      <nav class="navbar">
+        MockMate
+      </nav>
+
+      <div class="m-20">
+        <app-progress-stepper (indexChange)="handleQuestionChange($event)" [activeIndex]="activeQuestionIdx"
+          [totalSteps]="response.length">
+        </app-progress-stepper>
+      </div>
+
+
+      <div class="bg-analysis">
+        <div class="bga-container audio">
+          <div class="note">
+            <h4>Background Noise</h4>
+            <h6>{{backgroundNoiseLevels > 0.9 ? "🔊" : "🔈"}}</h6>
+            <p>*Feedback will be skewed</p>
+          </div>
+          <div class="audio-indicator"
+            [ngStyle]="{'background': 'linear-gradient(0deg, rgba(203,13,13,1), ' + (backgroundNoiseLevels * 100) + '%, rgba(45,240,99,1) 100%)'}">
+          </div>
+        </div>
+        <div class="bga-container video">
+          <div class="note">
+            <h4># Person Detected</h4>
+            <h6>{{backgroundPersonCount}}</h6>
+            <p>{{backgroundPersonCount > 1.0 ? "Please avoid having other persons presence in your room" : " "}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <span>Question {{activeQuestionIdx + 1}} of {{response.length}}</span>
+        <p style="font-size: 20px;">{{response[activeQuestionIdx].interviewQuestion.question}}</p>
+        <mat-chip-set>
+          <mat-chip>💡{{response[activeQuestionIdx].interviewQuestion.keyPoint1}}</mat-chip>
+          <mat-chip>💡{{response[activeQuestionIdx].interviewQuestion.keyPoint2}}</mat-chip>
+          <mat-chip>💡{{response[activeQuestionIdx].interviewQuestion.keyPoint3}}</mat-chip>
+        </mat-chip-set>
+
+        <button 
+          mat-flat-button 
+          (click)="prepTimer.startPrep()"
+          *ngIf="!interviewStarted">
+          Record
+        </button>
+
+        <button 
+          *ngIf="interviewStarted" 
+          mat-flat-button 
+          (click)="recorder.stopRecorder()">
+          Stop
+        </button>
+
+        <button
+          [disabled]="interviewStarted" 
+          type="menu" 
+          mat-flat-button 
+          (click)="fileuploadbtn.click()">
+          Upload
+        </button>
+        
+        <input 
+          id='fileid' 
+          type='file' 
+          hidden 
+          #fileuploadbtn
+          (change)="handleFileUpload($event)"
+        />
+      </div>
+
+
+      <div class="clock m-20">
+        <span *ngFor="let char of interviewTimer.split(''); index as i " [ngClass]="{'char-block': i != 2}">
+          {{char}}
+        </span>
+      </div>
+
+
+      <app-interview-response-hud *ngIf="response[activeQuestionIdx].feedbackResponse" [interviewResponse]="response[activeQuestionIdx]">
+      </app-interview-response-hud>
+
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div class="loading-container">
+    Preparing Your Interview.. Please Be Patient
+  </div>
+</ng-template>

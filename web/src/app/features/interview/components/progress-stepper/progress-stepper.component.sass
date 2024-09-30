@@ -1,0 +1,34 @@
+.container
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+
+.progress-line,
+.progress-indicator
+  width: 100%
+  height: 2px
+  background-color: lightgray
+  position: absolute
+  z-index: -100
+
+.progress-indicator
+  z-index: -70
+  width: 0%
+  background-color: rgba(0,0,255,1)
+  // transition: all 1s
+  left: 0%
+
+
+.progress-container
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+.active
+  background-color: black
+  color: white
+
+.done
+  background-color: rgba(130, 187, 151, 1)
+  border: 3px solid black

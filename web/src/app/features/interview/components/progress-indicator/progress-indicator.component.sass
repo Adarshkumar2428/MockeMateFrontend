@@ -1,0 +1,82 @@
+$lightgray: #ececec
+$blue: rgb(80,70,228)
+
+.indicator-container
+  width: 25px
+  height: 25px
+  border-radius: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: .3em
+  background-color: white
+  border: 1px solid black
+  position: relative
+  cursor: pointer
+  
+  &.done
+    transition: all 1.3s
+    border: 2px solid $blue
+    background-color: $blue
+
+  &.active
+    transition: all 1.3s
+    background-color: white
+    border: 1px solid $blue
+  
+
+.indicator-bg
+  position: absolute
+  content: ''
+  width: 5px
+  height: 5px
+  border-radius: 100%
+  background-color: white
+  z-index: -10
+
+  &.active
+    transition: all 1.3s
+    border: 25px solid rgba(0,0,255,0.2)
+    animation: pulse 2s infinite forwards
+
+.indicator-center
+  position: absolute
+  width: 15px
+  height: 15px
+  border-radius: 100%
+  background-color: $blue
+  transition: all 1.3s
+
+  &.disabled
+    transition: all 1.3s
+    background-color: $lightgray
+    
+  &.done
+    width: 12px
+    height: 12px
+    background-color: white
+    transition: all 1.3s
+
+
+  &.active
+    background-color: $blue
+    transition: all 1.3s
+
+
+
+.disabled
+  background-color: white
+  border-color: $lightgray  
+  pointer-events: none
+
+@keyframes pulse
+  0%
+    scale: 0
+
+  90%
+    scale: 90%
+    opacity: 50%
+  
+  100%
+    scale:100%
+    opacity: 0%

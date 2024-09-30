@@ -1,0 +1,1002 @@
+[
+  {
+    "course": "AI",
+    "position": "Data Analyst",
+    "question": "Can you explain the process you use to clean and prepare data for analysis?",
+    "keyPoint1": "Understanding the data",
+    "keyPoint2": "Data Cleaning",
+    "keyPoint3": "Data Transformation"
+  },
+  {
+    "course": "AI",
+    "position": "Data Analyst",
+    "question": "How do you handle missing data in a dataset?",
+    "keyPoint1": "Assessment",
+    "keyPoint2": "Techniques",
+    "keyPoint3": "Impact Analysis"
+  },
+  {
+    "course": "AI",
+    "position": "Data Analyst",
+    "question": "Can you describe a time when you used data to solve a business problem? What was your approach and what tools did you use?",
+    "keyPoint1": "Problem Identification",
+    "keyPoint2": "Analysis",
+    "keyPoint3": "Outcome"
+  },
+  {
+    "course": "AI",
+    "position": "Data Analyst",
+    "question": "How do you ensure the accuracy and integrity of your data analysis?",
+    "keyPoint1": "Data Validation",
+    "keyPoint2": "Cross-Verification",
+    "keyPoint3": "Documentation"
+  },
+  {
+    "course": "AI",
+    "position": "Data Analyst",
+    "question": "Explain how you would use SQL to find the top 5 products by sales in the last month.",
+    "keyPoint1": "Query Structure",
+    "keyPoint2": "Time Filtering",
+    "keyPoint3": "Limiting Results"
+  },
+  {
+    "course": "AI",
+    "position": "Machine learning engineer",
+    "question": "What is overfitting in machine learning, and how can you prevent it?",
+    "keyPoint1": "Definition",
+    "keyPoint2": "Detection",
+    "keyPoint3": "Prevention Techniques"
+  },
+  {
+    "course": "AI",
+    "position": "Machine learning engineer",
+    "question": "Explain the concept of gradient descent.",
+    "keyPoint1": "Definition",
+    "keyPoint2": "Types",
+    "keyPoint3": "Challenges"
+  },
+  {
+    "course": "AI",
+    "position": "Machine learning engineer",
+    "question": "What are the differences between supervised and unsupervised learning?",
+    "keyPoint1": "Main Difference",
+    "keyPoint2": "Algorithms",
+    "keyPoint3": "Applications"
+  },
+  {
+    "course": "AI",
+    "position": "Machine learning engineer",
+    "question": "What is a confusion matrix, and why is it important?",
+    "keyPoint1": "Definition",
+    "keyPoint2": "Importance",
+    "keyPoint3": "components & metrics"
+  },
+  {
+    "course": "AI",
+    "position": "Machine learning engineer",
+    "question": "What are some common methods for feature selection?",
+    "keyPoint1": "Filter Methods",
+    "keyPoint2": "Techniques",
+    "keyPoint3": "Importance"
+  },
+  {
+    "course": "AI",
+    "position": "Data  Scientist",
+    "question": "What is the difference between correlation and causation?",
+    "keyPoint1": "Definition of Correlation",
+    "keyPoint2": "Definition of Causation",
+    "keyPoint3": "Implications"
+  },
+  {
+    "course": "AI",
+    "position": "Data  Scientist",
+    "question": "Explain the concept of A/B testing.",
+    "keyPoint1": "Definition",
+    "keyPoint2": "Process",
+    "keyPoint3": "Applications"
+  },
+  {
+    "course": "AI",
+    "position": "Data  Scientist",
+    "question": "What is a confusion matrix, and how is it used?",
+    "keyPoint1": "Definition",
+    "keyPoint2": "Components",
+    "keyPoint3": "Use Cases"
+  },
+  {
+    "course": "AI",
+    "position": "Data  Scientist",
+    "question": "How do you handle imbalanced datasets?",
+    "keyPoint1": "Resampling Techniques",
+    "keyPoint2": "Mention adjusting algorithm parameters",
+    "keyPoint3": "Evaluation Metrics"
+  },
+  {
+    "course": "AI",
+    "position": "Data  Scientist",
+    "question": "What is cross-validation, and why is it important?",
+    "keyPoint1": "Define cross-validation",
+    "keyPoint2": "Explain the benefits",
+    "keyPoint3": "Provide examples of when to use cross-validation"
+  },
+  {
+    "course": "AI",
+    "position": "Data engineer",
+    "question": "What is ETL, and why is it important in data engineering?",
+    "keyPoint1": "Define ETL",
+    "keyPoint2": "Explain each step",
+    "keyPoint3": "Highlight the importance of ETL"
+  },
+  {
+    "course": "AI",
+    "position": "Data engineer",
+    "question": "What is Apache Hadoop, and how is it used?",
+    "keyPoint1": "Define Hadoop as an open-source framework",
+    "keyPoint2": "Describe key components",
+    "keyPoint3": "Provide examples of use cases"
+  },
+  {
+    "course": "AI",
+    "position": "Data engineer",
+    "question": "Explain the concept of data warehousing.",
+    "keyPoint1": "Define a data warehouse",
+    "keyPoint2": "Describe the typical architecture",
+    "keyPoint3": "Discuss benefits"
+  },
+  {
+    "course": "AI",
+    "position": "Data engineer",
+    "question": "What is Apache Spark, and what are its main features?",
+    "keyPoint1": "Define Apache Spark",
+    "keyPoint2": "Discuss features",
+    "keyPoint3": "Highlight advantages"
+  },
+  {
+    "course": "AI",
+    "position": "Data engineer",
+    "question": "How do you ensure data quality in a data pipeline?",
+    "keyPoint1": "Mention the importance of monitoring data pipelines",
+    "keyPoint2": "Discuss techniques for validating data at various stages of the pipeline.",
+    "keyPoint3": "Explain the role of automated tests in ensuring data quality."
+  },
+  {
+    "course": "AI",
+    "position": "Business Analyst",
+    "question": "What is a SWOT analysis, and how is it used?",
+    "keyPoint1": "Define SWOT analysis",
+    "keyPoint2": "Describe the process of conducting a SWOT analysis",
+    "keyPoint3": "Highlight the benefits"
+  },
+  {
+    "course": "AI",
+    "position": "Business Analyst",
+    "question": "What are the key steps in the business analysis process?",
+    "keyPoint1": "Explain the importance of understanding business",
+    "keyPoint2": "Discuss identifying and understanding the needs of stakeholders.",
+    "keyPoint3": "Describe techniques for gathering requirements, such as interviews, surveys, and workshops."
+  },
+  {
+    "course": "AI",
+    "position": "Business Analyst",
+    "question": "What is the purpose of a business requirements document (BRD)?",
+    "keyPoint1": "Define a BRD",
+    "keyPoint2": "Describe key components",
+    "keyPoint3": "Highlight the importance of a BRD"
+  },
+  {
+    "course": "AI",
+    "position": "Business Analyst",
+    "question": "How do you prioritize requirements in a project?",
+    "keyPoint1": "Discuss techniques",
+    "keyPoint2": "Mention criteria used for prioritization,",
+    "keyPoint3": "Explain how to balance competing needs and constraint"
+  },
+  {
+    "course": "AI",
+    "position": "Business Analyst",
+    "question": "What is a use case, and how do you create one?",
+    "keyPoint1": "Define a use case",
+    "keyPoint2": "Describe key components",
+    "keyPoint3": "Explain the process of creating use cases"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security analyst",
+    "question": "What is a Security Information and Event Management (SIEM) system, and how is it used?",
+    "keyPoint1": "Define SIEM as a solution",
+    "keyPoint2": "Explain key functions",
+    "keyPoint3": "Provide examples of how SIEM is used"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security analyst",
+    "question": "What steps would you take if you identified a potential security breach?",
+    "keyPoint1": "explain the initial steps to confirm the breach",
+    "keyPoint2": "Discuss immediate actions to contain the breach",
+    "keyPoint3": "Explain the process of restoring"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security analyst",
+    "question": "Explain the concept of a vulnerability assessment.",
+    "keyPoint1": "Define a vulnerability assessment",
+    "keyPoint2": "Describe the steps involved",
+    "keyPoint3": "Mention common tools used for vulnerability assessments"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security analyst",
+    "question": "What is the difference between a false positive and a false negative in security monitoring?",
+    "keyPoint1": "Discuss the impact of false positives",
+    "keyPoint2": "Explain the importance of balancing sensitivity and specificity in security monitoring to minimize both false positives and false negatives.",
+    "keyPoint3": "Mention techniques to reduce false positives, such as tuning rules and improving threat intelligence."
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security analyst",
+    "question": "What are some common types of malware and their characteristics?",
+    "keyPoint1": "Define a virus as malware",
+    "keyPoint2": "Explain that a Trojan horse",
+    "keyPoint3": "Define ransomware and spyware"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security Manager",
+    "question": "What is a risk management framework, and why is it important?",
+    "keyPoint1": "Define a risk management framework",
+    "keyPoint2": "Discuss key components",
+    "keyPoint3": "Highlight the importance of RMF"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security Manager",
+    "question": "How do you develop and implement a security policy?",
+    "keyPoint1": "Explain the importance of assessing",
+    "keyPoint2": "Describe the process of drafting the policy",
+    "keyPoint3": "Highlight the importance of communicating"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security Manager",
+    "question": "What are some key considerations when conducting a security audit?",
+    "keyPoint1": "Define the scope of the audit",
+    "keyPoint2": "Discuss the methodology",
+    "keyPoint3": "Describe the process of reporting findings"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security Manager",
+    "question": "How do you handle security incidents in an organization?",
+    "keyPoint1": "Explain the steps to detect and analyze the incident",
+    "keyPoint2": "Describe actions to contain and eradicate the threat",
+    "keyPoint3": "Explain the process of recovering affected systems"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Security Manager",
+    "question": "What are some strategies for managing third-party risk?",
+    "keyPoint1": "Discuss the importance of assessing",
+    "keyPoint2": "Highlight the importance of continuous monitoring",
+    "keyPoint3": "Describe how to ensure third-party vendors"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Cyber security engineer",
+    "question": "What is a firewall, and how does it work?",
+    "keyPoint1": "Define a firewall as a network security device",
+    "keyPoint2": "Explain functionality of firewall",
+    "keyPoint3": "Give examples of use cases"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Cyber security engineer",
+    "question": "What is multi-factor authentication (MFA), and why is it important?",
+    "keyPoint1": "Define MFA",
+    "keyPoint2": "Highlight the benefits of MFA",
+    "keyPoint3": "Discuss common methods of implementing MFA"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Cyber security engineer",
+    "question": "What is a zero-day exploit, and how can organizations protect against it?",
+    "keyPoint1": "Define a zero-day exploit",
+    "keyPoint2": "Discuss challenges in detecting zero-day",
+    "keyPoint3": "Describe the importance of having an incident response plan"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Cyber security engineer",
+    "question": "Explain the concept of encryption and its importance in cybersecurity.",
+    "keyPoint1": "Define encryption",
+    "keyPoint2": "Discuss common applications of encryption",
+    "keyPoint3": "Highlight the importance"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Cyber security engineer",
+    "question": "What is a DDoS attack, and how can it be mitigated?",
+    "keyPoint1": "Define a Distributed Denial of Service (DDoS",
+    "keyPoint2": "Explain methods for detecting DDoS attacks",
+    "keyPoint3": "Discuss mitigation strategies"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Network security engineer",
+    "question": "What are the differences between IDS and IPS?",
+    "keyPoint1": "Definition of IDS",
+    "keyPoint2": "Definition of IPS",
+    "keyPoint3": "Functionality"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Network security engineer",
+    "question": "What is network segmentation, and why is it important?",
+    "keyPoint1": "Define network segmentation",
+    "keyPoint2": "Discuss benefits",
+    "keyPoint3": "Explain how to implement"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Network security engineer",
+    "question": "Explain the concept of a Virtual Private Network (VPN).",
+    "keyPoint1": "Define a VPN",
+    "keyPoint2": "Discuss common VPN protocols",
+    "keyPoint3": "Highlight benefits"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Network security engineer",
+    "question": "What is the role of a DMZ in network security?",
+    "keyPoint1": "Explain the purpose of a DMZ",
+    "keyPoint2": "Discuss how to implement a DMZ",
+    "keyPoint3": "Highlight benefits"
+  },
+  {
+    "course": "Cybersecurity",
+    "position": "Network security engineer",
+    "question": "How do you secure a wireless network?",
+    "keyPoint1": "Discuss the importance",
+    "keyPoint2": "Explain the use of strong authentication methods",
+    "keyPoint3": "Highlight the importance of continuous monitoring"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "devops engineer",
+    "question": "What is Infrastructure as Code (IaC) and why is it important?",
+    "keyPoint1": "Explain IaC",
+    "keyPoint2": "Discuss benefits",
+    "keyPoint3": "Mention popular IaC tools"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "devops engineer",
+    "question": "How do you implement CI/CD in a DevOps pipeline?",
+    "keyPoint1": "Define CI",
+    "keyPoint2": "Explain CD",
+    "keyPoint3": "Mention CI/CD tools"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "devops engineer",
+    "question": "What are some best practices for monitoring and logging in a DevOps environment?",
+    "keyPoint1": "Centralized Logging",
+    "keyPoint2": "Monitoring Tools",
+    "keyPoint3": "Alerting"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "devops engineer",
+    "question": "How do you ensure security in a DevOps pipeline?",
+    "keyPoint1": "Explain Security  Scanning",
+    "keyPoint2": "Describe DevSecOps practices",
+    "keyPoint3": "Discuss Compliance and Policies"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "devops engineer",
+    "question": "What is container orchestration, and why is it important?",
+    "keyPoint1": "Define container orchestration",
+    "keyPoint2": "Discuss benefits",
+    "keyPoint3": "Mention popular orchestration tools"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "cloud consultant",
+    "question": "How do you approach cloud migration for an enterprise?",
+    "keyPoint1": "Explain the initial assessment phase",
+    "keyPoint2": "Discuss developing a migration strategy",
+    "keyPoint3": "Highlight the importance"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "cloud consultant",
+    "question": "What are the key considerations for designing a cloud architecture?",
+    "keyPoint1": "Scalability and Performance",
+    "keyPoint2": "Security and Compliance",
+    "keyPoint3": "Highlight cost management"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "cloud consultant",
+    "question": "How do you ensure data security in the cloud?",
+    "keyPoint1": "Discuss the use of encryptio",
+    "keyPoint2": "Highlight tools and practices",
+    "keyPoint3": "Monitoring and Incident Response"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "cloud consultant",
+    "question": "What are some advantages and challenges of multi-cloud environments?",
+    "keyPoint1": "Mention advantages",
+    "keyPoint2": "Discuss challenges",
+    "keyPoint3": "Highlight tools and practices"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "cloud consultant",
+    "question": "How do you optimize cloud costs for an organization?",
+    "keyPoint1": "Resource Management",
+    "keyPoint2": "Billing and Budgeting",
+    "keyPoint3": "Cost Analysis"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Azure devops engineer",
+    "question": "What is Azure DevOps, and what services does it provide?",
+    "keyPoint1": "Define Azure DevOp",
+    "keyPoint2": "Discuss core services",
+    "keyPoint3": "mention the seamless integration"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Azure devops engineer",
+    "question": "How do you implement CI/CD pipelines in Azure DevOps?",
+    "keyPoint1": "Explain pipeline creation",
+    "keyPoint2": "Discuss automation",
+    "keyPoint3": "Highlight best practices"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Azure devops engineer",
+    "question": "How do you manage and secure code repositories in Azure Repos?",
+    "keyPoint1": "Explain  version control",
+    "keyPoint2": "Discuss implementing breach policies",
+    "keyPoint3": "Highlight importance of securing repositories"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Azure devops engineer",
+    "question": "What is Infrastructure as Code (IaC) in the context of Azure DevOps?",
+    "keyPoint1": "Define IaC",
+    "keyPoint2": "Discuss tools like Azure Resource Manager (ARM) templates, Terraform, and Bicep.",
+    "keyPoint3": "Highlight benefits"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Azure devops engineer",
+    "question": "How do you monitor and manage Azure DevOps pipelines?",
+    "keyPoint1": "Explain the use of Azure Monitor",
+    "keyPoint2": "Discuss setting up logs and alerts",
+    "keyPoint3": "Highlight the importance of creating dashboards"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Site reliability engineer",
+    "question": "What is the role of a Site Reliability Engineer (SRE)?",
+    "keyPoint1": "Define SRE",
+    "keyPoint2": "Discuss key responsibilities",
+    "keyPoint3": "Highlight the primary goal"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Site reliability engineer",
+    "question": "How do you define and measure Service Level Objectives (SLOs)?",
+    "keyPoint1": "Define SLOs",
+    "keyPoint2": "Discuss identifying and selecting appropriate metrics",
+    "keyPoint3": "Explain the importance of continuous monitoring"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Site reliability engineer",
+    "question": "How do you handle incident response and post-incident reviews?",
+    "keyPoint1": "Describe the steps for effective incident response",
+    "keyPoint2": "Explain the importance of conducting a thorough post-incident review",
+    "keyPoint3": "Highlight the need for detailed documentation"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Site reliability engineer",
+    "question": "What are some strategies for automating operational tasks?",
+    "keyPoint1": "Discuss tools and technologies for automation",
+    "keyPoint2": "Highlight the benefits of automation",
+    "keyPoint3": "Explain the approach to identifying repetitive tasks"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Site reliability engineer",
+    "question": "How do you ensure the scalability and reliability of a system?",
+    "keyPoint1": "Discuss design principles",
+    "keyPoint2": "Explain the importance of  testing",
+    "keyPoint3": "Highlight the role of continuous monitoring"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Applications analyst",
+    "question": "What is the role of an Applications Analyst?",
+    "keyPoint1": "Define the role",
+    "keyPoint2": "Discuss key responsibilities",
+    "keyPoint3": "Highlight the need for collaborating"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Applications analyst",
+    "question": "How do you handle application performance issues?",
+    "keyPoint1": "Explain the process of identifying performance issues",
+    "keyPoint2": "Root Cause Analysis",
+    "keyPoint3": "Highlight the steps to resolve performance issues"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Applications analyst",
+    "question": "What are some best practices for application testing?",
+    "keyPoint1": "Discuss different types of testing",
+    "keyPoint2": "Highlight the importance of automated testing",
+    "keyPoint3": "Highlight the importance of automated testing"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Applications analyst",
+    "question": "How do you manage software updates and patches?",
+    "keyPoint1": "Explain the importance of planning",
+    "keyPoint2": "Discuss the need for thorough testing",
+    "keyPoint3": "Highlight the steps for deploying updates"
+  },
+  {
+    "course": "Cloud computing",
+    "position": "Applications analyst",
+    "question": "How do you ensure data integrity and security in applications?",
+    "keyPoint1": "Discuss the implementation of data validation",
+    "keyPoint2": "Explain the importance of implementing strict access controls",
+    "keyPoint3": "Highlight additional security measures"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Product Technician",
+    "question": "What steps do you take to ensure product quality?",
+    "keyPoint1": "Discuss the methods and tools",
+    "keyPoint2": "Mention quality standards",
+    "keyPoint3": "Highlight the importance of documenting"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Product Technician",
+    "question": "How do you handle a product defect identified during production?",
+    "keyPoint1": "Immediate Action",
+    "keyPoint2": "Root Cause Analysis",
+    "keyPoint3": "Communication"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Product Technician",
+    "question": "Describe your experience with product testing equipment.",
+    "keyPoint1": "Types of Equipment",
+    "keyPoint2": "Explain how you operate",
+    "keyPoint3": "Mention the importance of regular calibration"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Product Technician",
+    "question": "How do you prioritize tasks in a fast-paced production environment?",
+    "keyPoint1": "Task Management",
+    "keyPoint2": "Time Management",
+    "keyPoint3": "Communication"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Product Technician",
+    "question": "How do you ensure compliance with safety regulations?",
+    "keyPoint1": "Discuss safety procedures",
+    "keyPoint2": "Mention the importance of regular safety training",
+    "keyPoint3": "Highlight the process of reporting"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Inventory associate",
+    "question": "What methods do you use to keep track of inventory levels?",
+    "keyPoint1": "Mention the use of inventory management systems and software.",
+    "keyPoint2": "Explain importance of Regular audits",
+    "keyPoint3": "Highlight techniques of data accuracy"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Inventory associate",
+    "question": "How do you handle discrepancies in inventory?",
+    "keyPoint1": "Discuss investigating the cause of discrepancies and identifying errors.",
+    "keyPoint2": "Explain steps to resolve discrepancies, such as recounting and adjusting records.",
+    "keyPoint3": "Mention implementing measures to prevent future discrepancies."
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Inventory associate",
+    "question": "Describe your experience with inventory management software.",
+    "keyPoint1": "Software Familiarity",
+    "keyPoint2": "Discuss the key features",
+    "keyPoint3": "Highlight how the software improves efficiency"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Inventory associate",
+    "question": "How do you ensure the accuracy of incoming and outgoing inventory?",
+    "keyPoint1": "Verification",
+    "keyPoint2": "Documentation",
+    "keyPoint3": "Quality Checks"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Inventory associate",
+    "question": "How do you manage inventory in a high-turnover environment?",
+    "keyPoint1": "Discuss organizing inventory",
+    "keyPoint2": "Explain the process of timely replenishment",
+    "keyPoint3": "Forecasting"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Warehouse supervisor",
+    "question": "How do you ensure efficient warehouse operations?",
+    "keyPoint1": "Workflow Optimization",
+    "keyPoint2": "Explain effective allocation of resources",
+    "keyPoint3": "Highlight the importance of monitoring key performance"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Warehouse supervisor",
+    "question": "How do you handle conflicts among warehouse staff?",
+    "keyPoint1": "Communication",
+    "keyPoint2": "Discuss mediation techniques",
+    "keyPoint3": "Highlight the importance of follow-up"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Warehouse supervisor",
+    "question": "What steps do you take to ensure warehouse safety?",
+    "keyPoint1": "Safety Training",
+    "keyPoint2": "Compliance",
+    "keyPoint3": "Mention the importance of regular maintenance"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Warehouse supervisor",
+    "question": "How do you manage inventory accuracy in the warehouse?",
+    "keyPoint1": "Discuss the implementation of regular cycle counts to maintain accurate inventory records.",
+    "keyPoint2": "Explain the use of technology, such as barcode scanners and inventory management systems, to track inventory.",
+    "keyPoint3": "Audit Processes"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Warehouse supervisor",
+    "question": "How do you handle high-volume periods in the warehouse?",
+    "keyPoint1": "Planning",
+    "keyPoint2": "Staffing",
+    "keyPoint3": "Efficiency"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Logistic Manager",
+    "question": "How do you ensure timely delivery of goods?",
+    "keyPoint1": "Planning and Scheduling",
+    "keyPoint2": "Supplier Coordination",
+    "keyPoint3": "Highlight the use of tracking systems"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Logistic Manager",
+    "question": "How do you handle logistics challenges and disruptions?",
+    "keyPoint1": "Risk Management",
+    "keyPoint2": "Explain problem-solving techniques",
+    "keyPoint3": "Highlight the importance of clear communication"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Logistic Manager",
+    "question": "What strategies do you use to optimize logistics costs?",
+    "keyPoint1": "Discuss negotiating",
+    "keyPoint2": "Explain optimizing routes",
+    "keyPoint3": "Highlight the use of technology,"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Logistic Manager",
+    "question": "How do you ensure compliance with regulations in logistics?",
+    "keyPoint1": "Knowledge of Regulations",
+    "keyPoint2": "Explain the importance of training staff",
+    "keyPoint3": "Audits and Inspections"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Logistic Manager",
+    "question": "How do you manage relationships with suppliers and carriers?",
+    "keyPoint1": "Discuss the importance of maintaining open and regular communication",
+    "keyPoint2": "Performance Monitoring",
+    "keyPoint3": "Highlight strategies for resolving conflicts"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Supply Chain analyst",
+    "question": "How do you analyze supply chain data to improve performance?",
+    "keyPoint1": "Data Collection",
+    "keyPoint2": "Analysis Techniques",
+    "keyPoint3": "Actionable Insights"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Supply Chain analyst",
+    "question": "What metrics do you use to evaluate supply chain performance?",
+    "keyPoint1": "Mention key metrics",
+    "keyPoint2": "Discuss the importance of benchmarking performance",
+    "keyPoint3": "Continuous Improvement"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Supply Chain analyst",
+    "question": "How do you manage inventory levels to balance supply and demand?",
+    "keyPoint1": "Discuss the use of demand forecasting",
+    "keyPoint2": "Explain strategies for optimizing inventory levels",
+    "keyPoint3": "Highlight the importance of collaborating with other departments"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Supply Chain analyst",
+    "question": "How do you handle supply chain disruptions?",
+    "keyPoint1": "Risk Assessment",
+    "keyPoint2": "Explain developing contingency plans",
+    "keyPoint3": "Highlight strategies for building a resilient supply chain"
+  },
+  {
+    "course": "Supply Chain",
+    "position": "Supply Chain analyst",
+    "question": "What tools and technologies do you use for supply chain management?",
+    "keyPoint1": "Mention supply chain management software",
+    "keyPoint2": "Data Analytics",
+    "keyPoint3": "Highlight the importance of automation"
+  },
+  {
+    "course": "GBM",
+    "position": "Project Manager",
+    "question": "How do you handle scope changes in a project?",
+    "keyPoint1": "Explain the formal process for managing changes",
+    "keyPoint2": "Impact Analysis",
+    "keyPoint3": "Communication"
+  },
+  {
+    "course": "GBM",
+    "position": "Project Manager",
+    "question": "How do you ensure a project stays on schedule?",
+    "keyPoint1": "Discuss creating a detailed project plan",
+    "keyPoint2": "Explain the use of tools and techniques",
+    "keyPoint3": "Highlight the importance of making adjustments"
+  },
+  {
+    "course": "GBM",
+    "position": "Project Manager",
+    "question": "What strategies do you use to manage project risks?",
+    "keyPoint1": "Risk Identification",
+    "keyPoint2": "Risk Mitigation",
+    "keyPoint3": "Monitoring and Review"
+  },
+  {
+    "course": "GBM",
+    "position": "Project Manager",
+    "question": "How do you handle conflicts within your project team?",
+    "keyPoint1": "Early Identification",
+    "keyPoint2": "Explain conflict resolution techniques",
+    "keyPoint3": "Maintaining Team Morale"
+  },
+  {
+    "course": "GBM",
+    "position": "Project Manager",
+    "question": "How do you manage stakeholder expectations?",
+    "keyPoint1": "Clear Communication",
+    "keyPoint2": "Transparency",
+    "keyPoint3": "Engagement"
+  },
+  {
+    "course": "GBM",
+    "position": "Marketing Associate",
+    "question": "How do you develop a marketing campaign?",
+    "keyPoint1": "Research and Analysis",
+    "keyPoint2": "Planning and Strategy",
+    "keyPoint3": "Execution and Monitoring"
+  },
+  {
+    "course": "GBM",
+    "position": "Marketing Associate",
+    "question": "What metrics do you use to measure the success of a marketing campaign?",
+    "keyPoint1": "Mention relevant KPIs",
+    "keyPoint2": "Discuss using analytics tools",
+    "keyPoint3": "Highlight the importance of using metrics"
+  },
+  {
+    "course": "GBM",
+    "position": "Marketing Associate",
+    "question": "How do you stay updated with marketing trends?",
+    "keyPoint1": "Discuss reading industry-related publications, blogs, and reports.",
+    "keyPoint2": "Explain the importance of networking",
+    "keyPoint3": "Highlight the importance of continuous learning"
+  },
+  {
+    "course": "GBM",
+    "position": "Marketing Associate",
+    "question": "How do you handle negative feedback on social media?",
+    "keyPoint1": "Explain the importance of responding to negative feedback",
+    "keyPoint2": "Discuss addressing the customer's concerns",
+    "keyPoint3": "Highlight the importance of using feedback"
+  },
+  {
+    "course": "GBM",
+    "position": "Marketing Associate",
+    "question": "What strategies do you use to target a specific audience?",
+    "keyPoint1": "Discuss segmenting the target audience",
+    "keyPoint2": "Explain the use of personalized marketing",
+    "keyPoint3": "Highlight choosing the right channels"
+  },
+  {
+    "course": "GBM",
+    "position": "Technical Program Manager",
+    "question": "How do you manage multiple technical projects simultaneously?",
+    "keyPoint1": "Discuss prioritizing project goals",
+    "keyPoint2": "Resource Allocation",
+    "keyPoint3": "Monitoring and Adjustments"
+  },
+  {
+    "course": "GBM",
+    "position": "Technical Program Manager",
+    "question": "How do you handle technical challenges in a project?",
+    "keyPoint1": "Discuss a structured approach",
+    "keyPoint2": "Collaboration",
+    "keyPoint3": "Documentation"
+  },
+  {
+    "course": "GBM",
+    "position": "Technical Program Manager",
+    "question": "How do you ensure alignment between technical teams and business goals?",
+    "keyPoint1": "Discuss regular communication",
+    "keyPoint2": "Explain setting clear, aligned goals",
+    "keyPoint3": "Highlight the importance of tracking progress"
+  },
+  {
+    "course": "GBM",
+    "position": "Technical Program Manager",
+    "question": "What tools and methodologies do you use for project management?",
+    "keyPoint1": "Mention project management tools",
+    "keyPoint2": "Discuss methodologies",
+    "keyPoint3": "Highlight the importance of choosing the right tools"
+  },
+  {
+    "course": "GBM",
+    "position": "Technical Program Manager",
+    "question": "How do you manage project timelines and ensure timely delivery?",
+    "keyPoint1": "Discuss creating detailed project plan",
+    "keyPoint2": "Explain the importance of regular reviews",
+    "keyPoint3": "Highlight the importance of identifying and resolving issues"
+  },
+  {
+    "course": "GBM",
+    "position": "Web project manager",
+    "question": "How do you ensure a web project meets client requirements?",
+    "keyPoint1": "Requirements Gathering:",
+    "keyPoint2": "Client Communication",
+    "keyPoint3": "Highlight the importance of regular reviews"
+  },
+  {
+    "course": "GBM",
+    "position": "Web project manager",
+    "question": "How do you manage a web development team?",
+    "keyPoint1": "Discuss assigning tasks",
+    "keyPoint2": "Explain fostering collaboration",
+    "keyPoint3": "Highlight the importance of monitoring performance"
+  },
+  {
+    "course": "GBM",
+    "position": "Web project manager",
+    "question": "What are the key phases of a web development project?",
+    "keyPoint1": "Discuss the initial phases",
+    "keyPoint2": "Development and Testing",
+    "keyPoint3": "Highlight the deployment phase"
+  },
+  {
+    "course": "GBM",
+    "position": "Web project manager",
+    "question": "How do you handle scope changes in a web project?",
+    "keyPoint1": "Change Control Process",
+    "keyPoint2": "Impact Analysis",
+    "keyPoint3": "Communication"
+  },
+  {
+    "course": "GBM",
+    "position": "Web project manager",
+    "question": "How do you ensure the quality of a web project?",
+    "keyPoint1": "Discuss different types of testing",
+    "keyPoint2": "Quality Standards",
+    "keyPoint3": "Feedback and Iteration"
+  },
+  {
+    "course": "GBM",
+    "position": "Associate Project Manager",
+    "question": "How do you support senior project managers in their tasks?",
+    "keyPoint1": "Task Management",
+    "keyPoint2": "Documentation",
+    "keyPoint3": "Communication"
+  },
+  {
+    "course": "GBM",
+    "position": "",
+    "question": "How do you handle project documentation and reporting?",
+    "keyPoint1": "Discuss keeping organized records",
+    "keyPoint2": "Explain Regular Reporting",
+    "keyPoint3": "Highlight the importance of accuracy"
+  },
+  {
+    "course": "GBM",
+    "position": "",
+    "question": "What strategies do you use to manage project timelines?",
+    "keyPoint1": "Planning",
+    "keyPoint2": "Explain the importance of regular monitoring",
+    "keyPoint3": "Highlight the ability to adjust"
+  },
+  {
+    "course": "GBM",
+    "position": "",
+    "question": "How do you prioritize tasks in a project?",
+    "keyPoint1": "Urgency and Importance",
+    "keyPoint2": "Resource Availability",
+    "keyPoint3": "Stakeholder Needs"
+  },
+  {
+    "course": "GBM",
+    "position": "",
+    "question": "How do you handle communication with project stakeholders?",
+    "keyPoint1": "Clear Communication",
+    "keyPoint2": "Regular Updates",
+    "keyPoint3": "Feedback"
+  },
+  {
+    "course": "General",
+    "position": "Soft-skill",
+    "question": "Tell Me About Yourself",
+    "keyPoint1": "Professional Summary:",
+    "keyPoint2": "Skills and Achievements",
+    "keyPoint3": "Current Situation and Goals"
+  },
+  {
+    "course": "General",
+    "position": "Soft-skill",
+    "question": "What Are Your Strengths and Weaknesses?",
+    "keyPoint1": "Relevant Strength and Identify weakness",
+    "keyPoint2": "Provide a concrete example",
+    "keyPoint3": "Highlight the positive impact & what you have learned from addressing this weakness."
+  },
+  {
+    "course": "General",
+    "position": "Soft-skill",
+    "question": "Where Do You See Yourself in 5 Years?",
+    "keyPoint1": "Career Goals",
+    "keyPoint2": "Growth and Development",
+    "keyPoint3": "Company Alignment"
+  },
+  {
+    "course": "General",
+    "position": "Soft-skill",
+    "question": "Describe a situation where you had to work with a difficult team member. How did you handle it?",
+    "keyPoint1": "Understanding and Empathy",
+    "keyPoint2": "Communication",
+    "keyPoint3": "Resolution"
+  },
+  {
+    "course": "General",
+    "position": "Soft-skill",
+    "question": "Can you describe a time when you had to adapt to a significant change at work? How did you handle it?",
+    "keyPoint1": "Discuss your initial response",
+    "keyPoint2": "Learning and Development",
+    "keyPoint3": "Support and Implementation"
+  }
+]

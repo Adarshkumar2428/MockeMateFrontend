@@ -1,0 +1,5 @@
+<div class="video-recorder-container">
+  <ng-content></ng-content>
+  <video #videoElem class="video_elem" width="100%" height="100%" [ngStyle]="{'z-index': this.startRecording ? 1 : -100}">
+  </video>
+</div>

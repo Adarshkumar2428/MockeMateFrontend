@@ -1,0 +1,245 @@
+<section *ngIf="(interviewResponse)as response" class="feedbackResponse">
+
+
+  <div class="left">
+    <h5>Body Language</h5>
+    <div class="grid">
+      <div class="card">
+        <div class="card-header">
+          Emotion
+        </div>
+        <div class="card-body">
+          <label>{{ response.feedbackResponse.getDominantFacialExpression().dominantExpression }}</label>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="response">
+        <div class="card-header">
+          Posture
+        </div>
+        <div class="card-body">
+          <div>
+            <label>{{ response.feedbackResponse.getDominantPosture().dominantPosture }}</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="response">
+        <div class="card-header">
+          Focus Point
+        </div>
+        <div class="card-body">
+          <div>
+            <label>{{ response.feedbackResponse.getEyeMovementDominance() | titlecase }}</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="response">
+        <div class="card-header">
+          Eye Movements
+        </div>
+        <div class="card-body">
+          <div>
+            <label>{{ response.feedbackResponse.getEyeMovements() }}</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <h5>Communication and Speech</h5>
+    <div class="grid">
+      <div class="card" *ngIf="response">
+        <div class="card-header">
+          Emotion
+        </div>
+        <div class="card-body">
+          <div>
+            <label>{{ response.feedbackResponse.getDominantVoiceConfidence().dominantExpression }}</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Background
+        </div>
+        <div class="card-body">
+          {{response.computeBackgroundNoiseLabel()}}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Filler Words
+        </div>
+        <div class="card-body">
+          {{ response.feedbackResponse.getFillerCount() }}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          English Quality
+        </div>
+        <div class="card-body">
+          {{ response.feedbackResponse.getEnglishQuality()}}
+        </div>
+      </div>
+    </div>
+
+
+    <h5>Video Quality</h5>
+    <div class="grid">
+      <div class="card" *ngIf="response">
+        <div class="card-header">
+          Camera Distance
+        </div>
+        <div class="card-body">
+          <div>
+            <label>{{ response.feedbackResponse.categorizeCameraDistance() | titlecase }}</label>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          Brightness
+        </div>
+        <div class="card-body">
+          {{ response.feedbackResponse.getVideoQuality().brightness | number: '1.0-2' }}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Sharpness
+        </div>
+        <div class="card-body">
+          {{ response.feedbackResponse.getVideoQuality().sharpnessClassification }}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          Overall Quality
+        </div>
+        <div class="card-body">
+          {{ response.feedbackResponse.getVideoQuality().overallQuality }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="right">
+
+
+    <h5>Question & Answer</h5>
+
+    <div class="comment">
+      <div class="comment-header">
+        <h6>Your Answer</h6>
+      </div>
+      <div class="comment-body">
+        <p>{{response.feedbackResponse.qa.candidateAnswer}}</p>
+
+        <p><b>Score:</b> {{response.feedbackResponse.qa.score}}</p>
+      </div>
+    </div>
+
+    <div class="" *ngIf="response">
+      <div class="card-body">
+        <div class="comment">
+          <div class="comment-header">
+          </div>
+          <div class="comment-body">
+            <div class="section-grp">
+              <div class="section fail">
+                <h6>👎🏻Mistakes</h6>
+                <ul>
+                  <li *ngFor="let point of response.feedbackResponse.qa.mistakes">
+                      
+                    {{point.mistake}}.
+
+                  </li>
+                </ul>
+              </div>
+              <div class="section success">
+                <h6>👍🏻Tips</h6>
+                <ul>
+                  <li *ngFor="let point of response.feedbackResponse.qa.tips.split('.')">{{point}}.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- <div>
+          <p>
+            <b>{{ response.feedbackResponse.qa.question }}</b>
+          </p>
+          <p>
+            Your Answer: 
+          </p>
+        </div>
+        <div>
+          <p>
+            <b>{{ response.feedbackResponse.qa.mistakes }}</b>
+          </p>
+        </div>
+        <div>
+          <p>
+            <b>{{ response.feedbackResponse.qa.tips }}</b>
+          </p>
+        </div>
+        <div>
+          <p>
+            <b>{{ response.feedbackResponse.qa.score }}</b>
+          </p>
+        </div> -->
+
+
+        <h5>Answer Keypoints</h5>
+
+
+        <div *ngFor="let keypoint of response.feedbackResponse.qa.keypoints">
+          <div class="comment">
+            <div class="comment-body">
+              <h6 style="margin: 0px;">{{keypoint.keypoint}}.</h6>
+              <div class="section-grp">
+                <div class="section fail">
+                  <h6>👎🏻Mistakes</h6>
+                  <ul>
+                    <li *ngFor="let point of keypoint.keypointMistake.split('.')">
+                      <ng-container *ngIf="point.length > 1">{{point}}</ng-container>
+                    </li>
+                  </ul>
+                </div>
+                <div class="section success">
+                  <h6>👍🏻Tips</h6>
+                  <ul>
+                    <li *ngFor="let point of keypoint.keypointTip.split('.')">
+                      {{point}}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tags">
+              <div [class]="keypoint.keypointMentioned ? 'tag' : 'tag'">
+                {{!keypoint.keypointMentioned ?
+                "Not Mentioned" : "Mentioned"}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

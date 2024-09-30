@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="progress-line"></div>
+  <div class="progress-indicator" [ngStyle]="{'width': (progressIncrementPerct * visitedCount)+'%'}"></div>
+  <div class="progress-container">
+    <app-progress-indicator 
+      *ngFor="let step of stepsMap ; index as i" 
+      [active]="step.active" 
+      [done]="step.done" 
+      (click)="handleStepClick(i)"
+    />
+  </div>
+</div>
