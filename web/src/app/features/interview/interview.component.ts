@@ -1,4 +1,4 @@
-import { Component, ViewChild ,NgZone } from '@angular/core';
+import { Component, ViewChild, NgZone } from '@angular/core';
 import { InterviewRecorderComponent, ISSDResult } from './components/interview-recorder/interview-recorder.component';
 import { PrepTimerComponent } from './components/prep-timer/prep-timer.component';
 import { map, Subject, takeUntil, BehaviorSubject, Observable, take, timer, finalize, Subscription } from 'rxjs';
@@ -53,6 +53,20 @@ export class InterviewComponent {
   recognition: any;
   isListening: boolean = false;
   transcript: string = '';
+  
+  //progressSteps: number[] = [];
+   // Initialize the state of progress steps
+   progressSteps = [
+    { id: 1, done: false, active: false },
+    { id: 2, done: false, active: false },
+    { id: 3, done: false, active: false },
+    { id: 4, done: false, active: false },
+    { id: 5, done: false, active: false },
+    { id: 6, done: false, active: false },
+    // Add more steps as needed
+  ];
+
+ 
 
   videoInterviewResponse$ = new Subject<Feedback>();
   URL = "https://teachablemachine.withgoogle.com/models/8FGyQQ92l/";
@@ -77,19 +91,23 @@ export class InterviewComponent {
   constructor(
     private http: HttpClient,
     private questionService: QuestionService,
-    private zone: NgZone
+    private zone: NgZone,
 
-  ) {   const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+  ) {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     this.recognition = new SpeechRecognition();
     this.recognition.continuous = true;
     this.recognition.interimResults = true;
-    this.recognition.lang = 'en-US'; }
-    
+    this.recognition.lang = 'en-US';
+  }
+
 
   async ngOnInit() {
     //await tf.ready()
     //this.SpeechRecognition = await this.startSpeechRecognition();
+    
     this.startSpeechRecognition();
+    this.progressSteps[0].active = true; 
     this.questionService
       .getQuestionsByCourse('AI', 'Data Analyst')
       .pipe(map(value => value.map(q => new InterviewQuestionViewModel(q))), take(1))
@@ -97,45 +115,72 @@ export class InterviewComponent {
         this.interviewQues.next(value);
       })
   }
-    // Initialize Web Speech API instead of TensorFlow's model
-    startSpeechRecognition() {
-      this.isListening = true;
-      this.recognition.start();
-  
-      this.recognition.onresult = (event: any) => {
-        let interimTranscript = '';
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            this.transcript += event.results[i][0].transcript;
-          } else {
-            interimTranscript += event.results[i][0].transcript;
-          }
+  // Initialize Web Speech API instead of TensorFlow's model
+  startSpeechRecognition() {
+    this.isListening = true;
+    this.recognition.start();
+
+    this.recognition.onresult = (event: any) => {
+      let interimTranscript = '';
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          this.transcript += event.results[i][0].transcript;
+        } else {
+          interimTranscript += event.results[i][0].transcript;
         }
-        this.zone.run(() => {
-          this.transcript = this.transcript || interimTranscript;
-        });
-      };
-  
-      this.recognition.onerror = (event: any) => {
-        console.error('Speech Recognition Error:', event.error);
-        this.isListening = false;
-      };
-  
-      this.recognition.onend = () => {
-        this.isListening = false;
-      };
+      }
+      this.zone.run(() => {
+        this.transcript = this.transcript || interimTranscript;
+      });
+    };
+
+    this.recognition.onerror = (event: any) => {
+      console.error('Speech Recognition Error:', event.error);
+      this.isListening = false;
+    };
+
+    this.recognition.onend = () => {
+      this.isListening = false;
+    };
+  }
+
+  stopSpeechRecognition() {
+    this.recognition.stop();
+    this.isListening = false;
+  }
+  restartInterview() {
+    // Reset the active question index to start from the first question
+    this.activeQuestionIdx = 0;
+
+    // Reset the progress indicator steps
+    this.progressSteps = this.progressSteps.map(step => ({
+      ...step,
+      active: false,  // Clear the active state
+      done: false,    // Clear the done state
+    }));
+    // Reset all relevant states (e.g., timer, video recorder, feedback)
+    this.resetStates();
+
+    // Reset the question and video recorder for the first question
+    const firstQuestion = this.interviewQuesData[this.activeQuestionIdx];
+    if (firstQuestion.videoBlob) {
+      this.videoRecorderElem.setVideoURL(firstQuestion.videoBlob);
+    } else {
+      this.videoRecorderElem.resetVideo();
     }
 
-    stopSpeechRecognition() {
-      this.recognition.stop();
-      this.isListening = false;
-    }
-  
-    // detectBackgroundNoise() {
-    //   // Implement custom logic for background noise detection here (e.g., noise thresholding, or basic audio analysis)
-    //   this.backgroundNoiseLevels = Math.random();  // Replace with actual background noise detection logic
-    // }
-  
+    // Update the observable with the reset data
+    this.interviewQues.next(this.interviewQuesData);
+
+    // Optionally start the interview preparation process again (if needed)
+    this.interviewStarted = false;
+  }
+
+  // detectBackgroundNoise() {
+  //   // Implement custom logic for background noise detection here (e.g., noise thresholding, or basic audio analysis)
+  //   this.backgroundNoiseLevels = Math.random();  // Replace with actual background noise detection logic
+  // }
+
 
   incCounter() {
     this.activeQuestionIdx += 1
@@ -158,7 +203,7 @@ export class InterviewComponent {
 
   async detectBackgroundNoise() {
     console.log("Detecting Background Noise");
-  
+
     // Initialize noise detection logic
     const noiseDetectionInterval = setInterval(() => {
       if (this.isListening) {
@@ -169,19 +214,19 @@ export class InterviewComponent {
         } else {
           this.backgroundNoiseLevels = Math.max(this.backgroundNoiseLevels - 0.1, 0); // Decrease noise level
         }
-  
+
         // Update the background noise level in the current question data
         this.interviewQuesData[this.activeQuestionIdx].backgroundNoiseLevel.push(this.backgroundNoiseLevels);
       }
     }, 1000); // Check every second
-  
+
     // Stop noise detection when speech recognition ends
     this.recognition.onend = () => {
       clearInterval(noiseDetectionInterval);
       this.isListening = false;
     };
   }
-  
+
 
 
   startTimer() {
@@ -263,7 +308,7 @@ export class InterviewComponent {
 
 
   handleObjectDetectionResult(result: ISSDResult[]) {
-    this.detectPersons(result);
+
     if (result.length) {
       const personCount = result.filter(s => s.class == 'person').length;
       this.backgroundPersonCount = personCount;
@@ -304,7 +349,7 @@ export class InterviewComponent {
     //   this.recognizerModel.stopListening()
     // }
 
-    if(this.timer$) {
+    if (this.timer$) {
       this.timer$.unsubscribe();
     }
 
@@ -313,6 +358,6 @@ export class InterviewComponent {
   ngOnDestroy() {
     this.destroy$.next()
     this.destroy$.unsubscribe()
-    this.stopSpeechRecognition(); 
+    this.stopSpeechRecognition();
   }
 }
