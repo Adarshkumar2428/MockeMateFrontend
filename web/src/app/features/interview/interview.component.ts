@@ -18,6 +18,7 @@ import { ProgressStepperComponent } from './components/progress-stepper/progress
 import { ProgressIndicatorComponent } from './components/progress-indicator/progress-indicator.component';
 import { MatList, MatListItem } from '@angular/material/list';
 import { MatChip, MatChipSet } from '@angular/material/chips';
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -67,7 +68,7 @@ export class InterviewComponent {
   ];
 
  
-
+  selectedOption: string = '';
   videoInterviewResponse$ = new Subject<Feedback>();
   URL = "https://teachablemachine.withgoogle.com/models/8FGyQQ92l/";
   //recognizerModel!: speechCommands.SpeechCommandRecognizer;
@@ -77,7 +78,13 @@ export class InterviewComponent {
   backgroundPersonCount = 0.0;
 
   frameCounter = 0;
-
+  
+  //dropdown list for course 
+  courses: string[] = [];
+  positions: string[] = [];
+  selectedCourse: string = '';
+  selectedPosition: string = '';
+  isStartEnabled: boolean = false;
 
   interviewQues: BehaviorSubject<InterviewQuestionViewModel[]> = new BehaviorSubject<InterviewQuestionViewModel[]>([]);
   activeQuestionIdx: number = 0;
@@ -92,6 +99,7 @@ export class InterviewComponent {
     private http: HttpClient,
     private questionService: QuestionService,
     private zone: NgZone,
+    private cdr:ChangeDetectorRef,
 
   ) {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -105,17 +113,62 @@ export class InterviewComponent {
   async ngOnInit() {
     //await tf.ready()
     //this.SpeechRecognition = await this.startSpeechRecognition();
-    
+    // Fetch questions data and extract unique courses
+    this.questionService.getCourses()
+    .pipe(take(1))
+    .subscribe((courseNames: string[]) => {
+      this.courses = courseNames; // Populate dropdown with courses
+    });
+  
     this.startSpeechRecognition();
     this.progressSteps[0].active = true; 
-    this.questionService
-      .getQuestionsByCourse('AI', 'Data Analyst')
-      .pipe(map(value => value.map(q => new InterviewQuestionViewModel(q))), take(1))
-      .subscribe(value => {
-        this.interviewQues.next(value);
-      })
   }
-  // Initialize Web Speech API instead of TensorFlow's model
+
+  handleCourseSelection(event: Event) {
+    this.selectedCourse = (event.target as HTMLSelectElement).value;
+  
+    // Fetch positions for the selected course
+    this.questionService.getPositionsByCourse(this.selectedCourse)
+      .pipe(take(1))
+      .subscribe((positions: string[]) => {
+        this.positions = positions;
+      });
+  
+    // Reset selected position and disable start button until both are selected
+    this.selectedPosition = '';
+    this.isStartEnabled = false;
+  }
+
+// Handle position selection and enable the start button if both course and position are selected
+handlePositionSelection(event: Event) {
+  this.selectedPosition = (event.target as HTMLSelectElement).value;
+  this.checkStartButton();
+}
+  // Check if the start button should be enabled
+checkStartButton() {
+  this.isStartEnabled = this.selectedCourse !== '' && this.selectedPosition !== '';
+}
+  //   // Handle the dropdown selection
+  // handleSelection(event: Event) {
+  //   debugger
+  //   this.selectedOption = (event.target as HTMLSelectElement).value;
+  //   this.questionService
+  //   .getQuestionsByCourse(this.selectedOption, 'Supply Chain analyst')
+  //   .pipe(map(value => value.map(q => new InterviewQuestionViewModel(q))), take(1))
+  //   .subscribe(value => {
+  //     this.interviewQues.next(value);
+  //   })
+  //   console.log('Selected option:', this.selectedOption);
+  // }
+
+  startInterview() {
+    if (this.selectedOption) {
+      console.log('Interview started with option:', this.selectedOption);
+      // Interview start logic here
+    }
+  }
+
+  // Initialize Web Speech API 
   startSpeechRecognition() {
     this.isListening = true;
     this.recognition.start();
@@ -151,31 +204,47 @@ export class InterviewComponent {
   restartInterview() {
     // Reset the active question index to start from the first question
     this.activeQuestionIdx = 0;
-
+  
     // Reset the progress indicator steps
     this.progressSteps = this.progressSteps.map(step => ({
       ...step,
       active: false,  // Clear the active state
       done: false,    // Clear the done state
     }));
+    this.progressSteps[0].active = true; // Set the first step to active
+  
     // Reset all relevant states (e.g., timer, video recorder, feedback)
     this.resetStates();
-
-    // Reset the question and video recorder for the first question
-    const firstQuestion = this.interviewQuesData[this.activeQuestionIdx];
-    if (firstQuestion.videoBlob) {
-      this.videoRecorderElem.setVideoURL(firstQuestion.videoBlob);
-    } else {
-      this.videoRecorderElem.resetVideo();
-    }
-
+  
+    const quesData = this.interviewQuesData.map(q => {
+      const resetQuestion = new InterviewQuestionViewModel(q.interviewQuestion);  // Re-create as InterviewQuestionViewModel
+      resetQuestion.interviewRecorded = false;  // Reset recorded status
+      // resetQuestion.videoBlob = null;  
+       this.videoRecorderElem.resetVideo()         // Clear the video blob
+      //  resetQuestion.previewURL = null;          // Clear the preview URL
+      //  resetQuestion.feedbackResponse = null;    // Clear any feedback
+       this.questionService
+      .getQuestionsByCourse('AI', 'Data Analyst')
+      .pipe(map(value => value.map(q => new InterviewQuestionViewModel(q))), take(1))
+      .subscribe(value => {
+        this.interviewQues.next(value);
+      })
+      resetQuestion.backgroundNoiseLevel = [];  // Clear noise level data
+      resetQuestion.multipleFacesDetected = false;  // Reset face detection data
+      return resetQuestion;
+    });
+    // Reset the video recorder for the first question (this will clear the video URL)
+    this.videoRecorderElem.resetVideo();
+    
+  
     // Update the observable with the reset data
-    this.interviewQues.next(this.interviewQuesData);
-
+    this.interviewQues.next(quesData);
+  
     // Optionally start the interview preparation process again (if needed)
     this.interviewStarted = false;
+    this.cdr.detectChanges();
   }
-
+  
   // detectBackgroundNoise() {
   //   // Implement custom logic for background noise detection here (e.g., noise thresholding, or basic audio analysis)
   //   this.backgroundNoiseLevels = Math.random();  // Replace with actual background noise detection logic
@@ -312,6 +381,13 @@ export class InterviewComponent {
     if (result.length) {
       const personCount = result.filter(s => s.class == 'person').length;
       this.backgroundPersonCount = personCount;
+      
+
+      // if(this.backgroundPersonCount>1){
+      //   debugger
+      //   this.restartInterview();
+        
+      // }
       console.log(`Persons detected: ${personCount}`);
     }
   }

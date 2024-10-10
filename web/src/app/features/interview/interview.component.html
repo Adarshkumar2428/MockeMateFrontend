@@ -1,25 +1,55 @@
+ <!-- Header Section -->
+ <header class="header">
+  <h1 class="app-name">MockMate</h1>
+  <div>
+    <!-- Dropdown List -->
+    <select class="dropdown-list" (change)="handleCourseSelection($event)">
+      <option value=""disabled selected>Choose your course</option>
+      <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+    </select>
+
+    <!-- Position Dropdown -->
+<select class="dropdown-list" [disabled]="!selectedCourse" (change)="handlePositionSelection($event)">
+  <option value="" disabled selected>Choose your position</option>
+  <option *ngFor="let position of positions" [value]="position">{{ position }}</option>
+</select>
+
+    <!-- Start Button (Disabled until selection is made) -->
+    <button class="start-btn" [disabled]="!selectedOption" (click)="startInterview()">
+      Start
+    </button>
+  
+  </div>
+  <div class="user-info">AD</div> <!-- Displaying the logged-in username -->
+</header>
 <ng-container *ngIf="interviewQuesData.length != 0 else loading">
   <div class="container" *ngIf="(interviewQues | async) as response">
-    <app-interview-recorder (objDetectionResult)="handleObjectDetectionResult($event)" (videoRecorded)="handleVideoRecorded($event)" #recorder>
-      <app-prep-timer #prepTimer [showPrepMsg]="!response[activeQuestionIdx].videoBlob"
-        (prepComplete)="handlePrepComplete()" (prepStarted)="handlePrepStarted()">
+    
+   
+
+    <app-interview-recorder 
+      (objDetectionResult)="handleObjectDetectionResult($event)" 
+      (videoRecorded)="handleVideoRecorded($event)" 
+      #recorder>
+      <app-prep-timer 
+        #prepTimer 
+        [showPrepMsg]="!response[activeQuestionIdx].videoBlob"
+        (prepComplete)="handlePrepComplete()" 
+        (prepStarted)="handlePrepStarted()">
       </app-prep-timer>
     </app-interview-recorder>
 
     <div class="fr">
-
-      <nav class="navbar">
-        MockMate
-      </nav>
-
       <div class="m-20">
-        <app-progress-stepper (indexChange)="handleQuestionChange($event)" [activeIndex]="activeQuestionIdx"
+        <app-progress-stepper 
+          (indexChange)="handleQuestionChange($event)" 
+          [activeIndex]="activeQuestionIdx"
           [totalSteps]="response.length">
         </app-progress-stepper>
       </div>
 
-
       <div class="bg-analysis">
+        <!-- Background Analysis Content Here -->
         <div class="bga-container audio">
           <div class="note">
             <h4>Background Noise</h4>
@@ -70,7 +100,7 @@
           Upload
         </button>
 
-        <button mat-button (click)="restartInterview()">Restart Interview</button>
+        <button mat-flat-button (click)="restartInterview()">Restart Interview</button>
         
         <input 
           id='fileid' 
@@ -81,23 +111,21 @@
         />
       </div>
 
-
       <div class="clock m-20">
         <span *ngFor="let char of interviewTimer.split(''); index as i " [ngClass]="{'char-block': i != 2}">
           {{char}}
         </span>
       </div>
 
-
-      <app-interview-response-hud *ngIf="response[activeQuestionIdx].feedbackResponse" [interviewResponse]="response[activeQuestionIdx]">
+      <app-interview-response-hud *ngIf="response[activeQuestionIdx].feedbackResponse" 
+        [interviewResponse]="response[activeQuestionIdx]">
       </app-interview-response-hud>
-
     </div>
   </div>
 </ng-container>
 
 <ng-template #loading>
   <div class="loading-container">
-    Preparing Your Interview.. Please Be Patient
+    Please select your course . Preparing Your Interview.. Please Be Patient
   </div>
 </ng-template>

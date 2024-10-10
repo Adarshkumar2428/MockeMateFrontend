@@ -22,4 +22,20 @@ export class QuestionService {
     interviewQues.push(...courseQuestion)
     return of(interviewQues)
   }
+
+  getCourses(): Observable<string[]> {
+    // Extract unique course names from the questions array
+    const courses = [...new Set(questions.map(question => question.course))];
+    return of(courses); // Return an observable of the unique courses array
+  }
+
+  getPositionsByCourse(courseName: string): Observable<string[]> {
+    // Filter questions by course name and extract unique positions
+    const positions = [...new Set(
+      questions
+        .filter(question => question.course === courseName)
+        .map(question => question.position)
+    )];
+    return of(positions); // Return an observable of unique positions for the selected course
+  }
 }
